@@ -1,16 +1,25 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-song1 = Song.create!({name: "Uprising"})
-song2 = Song.create!({name: "Seeing Red"})
-song3 = Song.create!({name: "Make a hundred"})
-song4 = Song.create!({name: "I Wanna Dance with Somebody"})
-song5 = Song.create!({name: "How Will I know"})
-song6 = Song.create!({name: "My Love is Your Love"})
-song7 = Song.create!({name: "The Trooper"})
-song8 = Song.create!({name: "Run to the Hills"})
-song9 = Song.create!({name: "Fear of the Dark"})
+Song.delete_all
+Artist.delete_all
+
+artist1 = Artist.create!(name: "My Baby", image_url: "http://res.cloudinary.com/mojgan/image/upload/v1499715899/0004593960_10_zqi2dd.jpg")
+artist2 = Artist.create!(name: "Whitney Houston", image_url: "http://res.cloudinary.com/mojgan/image/upload/v1499715907/Whitney_Houston_-_Whitney_Houston__album_q9opmf.jpg")
+artist3 = Artist.create!(name: "Iron Maiden", image_url: "http://res.cloudinary.com/mojgan/image/upload/v1499608120/ironmaiden_sqkbzb.jpg")
+
+
+artist_count = Artist.all.length
+puts "#{artist_count} artists were created."
+
+
+song1 = Song.create!({name: "Uprising", artist: artist1 })
+song2 = Song.create!({name: "Seeing Red", artist: artist1 })
+song3 = Song.create!({name: "Make a hundred", artist: artist1 })
+song4 = Song.create!({name: "I Wanna Dance with Somebody", artist: artist2 })
+song5 = Song.create!({name: "How Will I know", artist: artist2 })
+song6 = Song.create!({name: "My Love is Your Love", artist: artist2 })
+song7 = Song.create!({name: "The Trooper", artist: artist3 })
+song8 = Song.create!({name: "Run to the Hills", artist: artist3 })
+song9 = Song.create!({name: "Fear of the Dark", artist: artist3 })
+
+
+song_count = Song.all.length
+puts "#{song_count} songs were created."
