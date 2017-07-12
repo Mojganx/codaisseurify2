@@ -1,19 +1,17 @@
-<%= form_for @song do |f| %>
+<%= form_for [@artist, @artist.songs.new] do |f| %>
 
-<ul>
-  <% @song.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @song.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
 
-  <%= f.submit (@song.new_record? ? "Create" : "Update") %>
+    <%= f.submit (@song.new_record? ? "Create" : "Update") %>
 
-<% end %>
 
-<%= f.label :artist_id %>
-<%= f.collection_select(:artist_id, artist.all, :id, :name) %>
+
 
 <% end %>

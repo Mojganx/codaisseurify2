@@ -10,18 +10,19 @@ class SongsController < ApplicationController
 
   def new
     @song = Song.new
+    # @artist = Artist.find(params[:id])
   end
 
   def create
+     @song = Song.create(song_params.merge(artist_id: params[:artist_id]))
 
-    @song = Song.new(song_params)
+     if @song.save
+       redirect_to artist_path(params[:artist_id]), notice: "Added successfully"
+     else
+       render artist_path, notice: "Unable to add song"
+     end
+   end
 
-    if @song.save
-      redirect_to @song
-    else
-      render 'new'
-    end
-  end
 
   def edit
     @song = Song.find(params[:id])
@@ -42,7 +43,7 @@ class SongsController < ApplicationController
 
     @song.destroy
 
-    redirect_to songs_path
+    redirect_to artists_path(params[:artist_id])
   end
 
   private
