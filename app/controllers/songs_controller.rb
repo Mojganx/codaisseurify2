@@ -17,9 +17,9 @@ class SongsController < ApplicationController
      @song = Song.create(song_params.merge(artist_id: params[:artist_id]))
 
      if @song.save
-       redirect_to artist_path(params[:artist_id]), notice: "Added successfully"
+       redirect_to artist_path(params[:artist_id])
      else
-       render artist_path, notice: "Unable to add song"
+       render artist_path
      end
    end
 

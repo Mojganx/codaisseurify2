@@ -1,8 +1,6 @@
 class Song < ApplicationRecord
-
-  belongs_to :artist
-
   validates :name, presence: true
+  belongs_to :artist
 
 
   def self.order_by_name
