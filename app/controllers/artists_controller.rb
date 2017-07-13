@@ -16,8 +16,8 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-  @artist = Artist.find(params[:id])
-end
+    @artist = Artist.find(params[:id])
+ end
 
   def destroy
     @artist = Artist.find(params[:id])

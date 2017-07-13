@@ -3,5 +3,5 @@
 
 <% @artists.each do |artist| %>
   <p><%= link_to artist.name, artist_path(artist.id) %></p>
-  <p><%= image_tag artist.image %></p>
+  <p><%= image_tag artist.image, :size => '300x300' %></p>
 <% end %>

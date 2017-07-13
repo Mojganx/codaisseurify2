@@ -1,9 +1,9 @@
 Song.delete_all
 Artist.delete_all
 
-artist1 = Artist.create!(name: "My Baby", image: "http://res.cloudinary.com/mojgan/image/upload/v1499715899/0004593960_10_zqi2dd.jpg")
-artist2 = Artist.create!(name: "Whitney Houston", image: "http://res.cloudinary.com/mojgan/image/upload/v1499715907/Whitney_Houston_-_Whitney_Houston__album_q9opmf.jpg")
-artist3 = Artist.create!(name: "Iron Maiden", image: "http://res.cloudinary.com/mojgan/image/upload/v1499608120/ironmaiden_sqkbzb.jpg")
+artist1 = Artist.create!(name: "My Baby", remote_image_url: "http://res.cloudinary.com/mojgan/image/upload/v1499715899/0004593960_10_zqi2dd.jpg")
+artist2 = Artist.create!(name: "Whitney Houston", remote_image_url: "http://res.cloudinary.com/mojgan/image/upload/v1499715907/Whitney_Houston_-_Whitney_Houston__album_q9opmf.jpg")
+artist3 = Artist.create!(name: "Iron Maiden", remote_image_url: "http://res.cloudinary.com/mojgan/image/upload/v1499608120/ironmaiden_sqkbzb.jpg")
 
 
 artist_count = Artist.all.length
