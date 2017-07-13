@@ -7,6 +7,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
      @song = Song.new
+    #  @photos = @artist.photo
   end
 
   def new
@@ -19,7 +20,7 @@ class ArtistsController < ApplicationController
 end
 
   def destroy
-    @artist = Dinosaur.find(params[:id])
+    @artist = Artist.find(params[:id])
 
     @artist.destroy
 
