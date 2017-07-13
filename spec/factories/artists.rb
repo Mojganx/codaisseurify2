@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :artist do
-    name    {Faker::Name.name}
+    name "MyString"
+    image "MyString"
   end
 end
