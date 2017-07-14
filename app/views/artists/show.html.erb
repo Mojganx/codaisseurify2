@@ -19,9 +19,6 @@
 <% end %>
 
 
-  <%= render 'songs/form' %>
-
+<%= link_to 'New Song', new_artist_song_path(@artist.id) %> |
 <%= link_to 'Back', artists_path %> |
  <%= link_to 'Remove', artist_path, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
-
-<!-- <%= link_to 'Add New Song', artist_songs_path(@artist) %> -->

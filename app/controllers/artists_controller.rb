@@ -9,15 +9,6 @@ class ArtistsController < ApplicationController
      @song = Song.new
   end
 
-  def new
-    @artist = Artist.new
-    @song = Song.new
-  end
-
-  def edit
-    @artist = Artist.find(params[:id])
- end
-
   def destroy
     @artist = Artist.find(params[:id])
 
